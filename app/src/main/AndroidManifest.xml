@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.udacitynewsapp.SettingsActivity"
+            android:name="com.example.android.udacitynewsapp.UserPreferencesActivity"
             android:label="@string/settings_title"
             android:screenOrientation="portrait">
             <meta-data

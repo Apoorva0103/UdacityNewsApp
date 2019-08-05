@@ -18,7 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 
-public class SettingsActivity extends AppCompatActivity {
+public class UserPreferencesActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
@@ -49,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
                     case R.id.section_environment:
                     case R.id.section_technology:
                     case R.id.section_sport:{
-                        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+                        startActivity(new Intent(UserPreferencesActivity.this, MainActivity.class));
                         break;
                     }
                     default:

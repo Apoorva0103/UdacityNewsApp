@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                         break;
                     }
                     case R.id.section_settings: {
-                        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                        startActivity(new Intent(MainActivity.this, UserPreferencesActivity.class));
                         break;
                     }
                     default:
