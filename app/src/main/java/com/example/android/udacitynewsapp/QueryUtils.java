@@ -20,7 +20,7 @@ import java.util.List;
 
 public class QueryUtils {
 
-    private static final String LOG_TAG = QueryUtils.class.getSimpleName();
+    private static final String TAG = QueryUtils.class.getSimpleName();
 
     private static final String RESPONSE_HEADER = "response";
     private static final String RESPONSE_SUB_HEADER = "results";
@@ -38,10 +38,10 @@ public class QueryUtils {
         try {
             jsonResponse = httpRequest(url);
         } catch (IOException e) {
-            Log.e(LOG_TAG, "HTTP error.", e);
+            Log.e(TAG, "HTTP error.", e);
         }
 
-        return extractFeaturesFromJson(jsonResponse);
+        return createNewsDataFromJsonResponse(jsonResponse);
     }
 
     private static URL formUrl(String strUrl) {
@@ -49,7 +49,7 @@ public class QueryUtils {
         try {
             url = new URL(strUrl);
         } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "URL Malformed ", e);
+            Log.e(TAG, "URL Malformed ", e);
         }
         return url;
     }
@@ -72,10 +72,10 @@ public class QueryUtils {
                 stream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(stream);
             } else {
-                Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
+                Log.e(TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Error fetching results.", e);
+            Log.e(TAG, "Error fetching results.", e);
         } finally {
             if (urlConnection != null)
                 urlConnection.disconnect();
@@ -99,15 +99,15 @@ public class QueryUtils {
         return output.toString();
     }
 
-    private static List<NewsData> extractFeaturesFromJson(String jsonResponse) {
+    private static List<NewsData> createNewsDataFromJsonResponse(String jsonResponse) {
         if (jsonResponse == null || jsonResponse.length() == 0)
             return null;
 
         ArrayList<NewsData> newsList = new ArrayList<>();
         try {
-            JSONObject baseResponse = new JSONObject(jsonResponse);
-            JSONObject responseObj = baseResponse.getJSONObject(RESPONSE_HEADER);
-            JSONArray resultsArray = responseObj.getJSONArray(RESPONSE_SUB_HEADER);
+            JSONObject responseJsonObj = new JSONObject(jsonResponse);
+            JSONObject responseDataObj = responseJsonObj.getJSONObject(RESPONSE_HEADER);
+            JSONArray resultsArray = responseDataObj.getJSONArray(RESPONSE_SUB_HEADER);
 
             if (resultsArray != null && resultsArray.length() > 0) {
                 for (int i = 0; i < resultsArray.length(); i++) {
@@ -135,7 +135,7 @@ public class QueryUtils {
                 }
             }
         } catch (JSONException e) {
-            Log.e(LOG_TAG, "Error parsing the JSON results", e);
+            Log.e(TAG, "Error parsing the JSON results", e);
         }
 
         return newsList;
