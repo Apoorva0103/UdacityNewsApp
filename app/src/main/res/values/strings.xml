@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">UdacityNewsApp</string>
+
+    <string name="app_name">News App</string>
+    <string name="settings_title">Preferences</string>
+
+    <string name="drawer_world">World</string>
+    <string name="drawer_science">Science</string>
+    <string name="drawer_environment">Environment</string>
+    <string name="drawer_technology">Technology</string>
+    <string name="drawer_sport">Sports</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_header" translatable="false">Udacity News</string>
+
+    <string name="param_section_environment">environment</string>
+    <string name="param_section_world">world</string>
+    <string name="param_section_technology">technology</string>
+    <string name="param_section_science">science</string>
+    <string name="param_section_sport">sport</string>
+
+
+    <string name="newsLinkUnavailable">Link not available.</string>
+    <string name="no_internet_connection">Please check your internet connection and pull down to refresh.</string>
+    <string name="empty_list">No news available</string>
+
+    <string name="settings_order_by_label">Order News By</string>
+    <string name="settings_order_by_key" translatable="false">order-by</string>
+    <string name="settings_order_by_default" translatable="false">newest</string>
+
+    <string name="items_per_page_text">Items Per Page</string>
+    <string name="items_per_page_key" translatable="false">page-size</string>
+    <string name="default_items_per_page" translatable="false">25</string>
 </resources>

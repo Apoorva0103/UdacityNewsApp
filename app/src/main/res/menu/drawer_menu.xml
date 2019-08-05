@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/section_world"
+            android:title="@string/drawer_world" />
+        <item
+            android:id="@+id/section_science"
+            android:title="@string/drawer_science" />
+        <item
+            android:id="@+id/section_environment"
+            android:title="@string/drawer_environment" />
+        <item
+            android:id="@+id/section_technology"
+            android:title="@string/drawer_technology" />
+        <item
+            android:id="@+id/section_sport"
+            android:title="@string/drawer_sport" />
+        <item
+            android:id="@+id/section_settings"
+            android:title="@string/drawer_settings" />
+    </group>
+
+</menu>

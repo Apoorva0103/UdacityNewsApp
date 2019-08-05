@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="settings_order_by_entry_items_labels">
+        <item>Newest</item>
+        <item>Oldest</item>
+        <item>Relevance</item>
+    </string-array>
+
+    <string-array name="settings_order_by_entry_items_values">
+        <item>newest</item>
+        <item>oldest</item>
+        <item>relevance</item>
+    </string-array>
+
+    <string-array name="settings_page_size_entry_items_labels">
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+    </string-array>
+
+    <string-array name="settings_page_size_entry_items_values">
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+    </string-array>
+
+</resources>
