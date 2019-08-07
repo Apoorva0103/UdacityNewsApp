@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -101,7 +102,7 @@ public class QueryUtils {
 
     private static List<NewsData> createNewsDataFromJsonResponse(String jsonResponse) {
         if (jsonResponse == null || jsonResponse.length() == 0)
-            return null;
+            return Collections.emptyList();
 
         ArrayList<NewsData> newsList = new ArrayList<>();
         try {
